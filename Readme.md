@@ -12,7 +12,7 @@ This is a simple console application that allows users to input a list of number
 
 ### Windows (Using g++ from MinGW)
 
-1. Install [MinGW](http://www.mingw.org/) and ensure `g++` is added to your PATH.
+1. Install [MinGW](https://www.mingw-w64.org/) and ensure `g++` is added to your PATH.
 2. Open Command Prompt and navigate to the project directory.
 3. Run the following command: g++ main.cpp Sort.cpp -o sorter
 
