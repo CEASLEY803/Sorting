@@ -1,10 +1,7 @@
 #ifndef SEQSORT_H
 #define SEQSORT_H
 #include <string>
-#include <vector>
 using std::string;
-
-extern std::vector<int> steps;
 
 void swap(int a, int b);
 
@@ -25,7 +22,7 @@ public:
     void selectSort(int Arr[], int size);
     void bubbleSort(int Arr[], int size);
     void insertionSort(int Arr[], int size);
-    
+    void printArray(int Arr[], int size);
 
 private:
     void decrement(int Arr[], int index);

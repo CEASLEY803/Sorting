@@ -6,8 +6,6 @@
 #include "Sort.h"
 using std::string;
 
-std::vector<int> steps;
-
 void Sorter::sort(int Arr[], int size, string method)
 {
 
@@ -31,6 +29,7 @@ void Sorter::sort(int Arr[], int size, string method)
 };
 void Sorter::insertionSort(int Arr[], int size)
 {
+    printArray(Arr, size);
     int index;
     index = 1;
     while (index < size)
@@ -41,14 +40,17 @@ void Sorter::insertionSort(int Arr[], int size)
             if (Arr[i] < Arr[i - 1])
             {
                 increment(Arr, i - 1);
+                printArray(Arr, size);
             }
         }
         index++;
+        
     }
 }
 
 void Sorter::bubbleSort(int Arr[], int size)
 {
+    printArray(Arr, size);
     bool sorted = false;
     int index1, index2;
     while (sorted == false)
@@ -65,12 +67,15 @@ void Sorter::bubbleSort(int Arr[], int size)
             }
             index1++;
             index2++;
+            printArray(Arr, size);
         }
     }
 }
 
 void Sorter::selectSort(int Arr[], int size)
 {
+    printArray(Arr, size);
+    int tempSize = size;
     int max, maxIndex;
     while (size > 1)
     {
@@ -86,9 +91,16 @@ void Sorter::selectSort(int Arr[], int size)
         }
         swapElements(Arr, maxIndex, size - 1);
         size--;
+        printArray(Arr, tempSize);
     }
 };
-
+void Sorter::printArray(int Arr[], int size) 
+{
+    for (int i = 0; i < size; ++i) {
+        std::cout << Arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
 SortMethod convertToEnum(string Input)
 {
     toLowerCase(Input);
@@ -121,18 +133,13 @@ void Sorter::increment(int Arr[], int index)
     swapElements(Arr, index, index+1);
 }
 
-void recordStep(int* arr, int size, int index1, int index2) {
-    steps.push_back(index1);
-    steps.push_back(index2);
-}
+
 
 void Sorter::swapElements(int Arr[], int index1, int index2)
 {
     int temp = Arr[index1];
     Arr[index1] = Arr[index2];
     Arr[index2] = temp;
-
-    recordStep(Arr, 0, index1, index2);
 }
 
 void toLowerCase(std::string &str)
