@@ -28,7 +28,9 @@ This is a simple console application that allows users to input a list of number
 ## Sample Input and Output
 
 Enter numbers separated by spaces: 11 10 9 8 7 6 5 4 3 2 1
+
 Select sorting method (bubble, select, insertion): s 
+
 Using sorting method: Selection Sort
 
 11 10 9 8 7 6 5 4 3 2 1
